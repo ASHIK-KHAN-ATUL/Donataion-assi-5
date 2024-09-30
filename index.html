@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-5th-assignment</title>
+
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .font-lexend{
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+        
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                'btn-primary':'#ABEF5F',
+                'nav-bg': '#F9F7F3',
+                'gray-bg':'#1111110D',
+                'btn-1': '#B4F461',
+    
+              }
+            }
+          }
+        }
+      </script>
+
+</head>
+<body class="font-lexend">
+    <!-- header section start -->
+    <header class=" pb-1 sticky top-0">
+        <!-- nav section  start-->
+        <nav class="font-semibold ">
+            <div class="h-auto bg-nav-bg ">
+
+               <div class="py-6 px-2 md:px-12 flex justify-between text-sm gap-4">
+                <!--  num 1 -->
+                <div>
+                    <button class=" bg-btn-1 px-8 py-3 rounded-lg">Blog</button>
+                </div>
+                <!-- num 2 -->
+                <div class=" md:flex text-center items-center  space-x-1 md:space-x-3 "> 
+                    <div class="flex justify-center">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <p>Donate Bangladesh</p>
+                </div>
+                <!-- num 3 -->
+                <div class=" flex text-center items-center space-x-1 md:space-x-3 ">
+                    <img src="assets/coin.png" alt="">
+                    <p id="main-balance">51500</p>
+                    <p>BTD</p>
+                </div>
+               </div>
+            </div>
+        </nav>
+        <section>
+            <div class="pt-14 pb-10 backdrop-blur-md flex justify-center gap-4">
+                <button id="btn-donate-main" class=" bg-btn-1 px-8 py-3 rounded-lg font-semibold">Donation</button>
+                <button id="history-btn" class="border-2 px-8 py-3 rounded-lg font-medium">History</button>
+            </div>
+        </section>
+    </header>
+
+    <!-- main  for cards -->
+    <main id="main-cards" class=" card-section md:container mx-auto mb-20 ">
+        <section class="space-y-9">
+            <!-- card 1 nowakhali-->
+            <div class=" lg:flex border-2 p-8 rounded-2xl gap-8  mx-3 space-y-6">
+                <!-- card img div -->
+                    <img src="assets/noakhali.png" alt="">
+                <!-- card text and input and button div -->
+                 <div class=" flex flex-col justify-between space-y-3">
+                    <!-- balance -->
+                            <div class=" flex text-center items-center space-x-1 md:space-x-2  bg-gray-bg px-4 py-2 rounded-lg w-32">
+                                <img width="full" src="assets/coin.png" alt="">
+                                <p id="nowakhali-donated-balance" class="font-normal text-xs">4900</p>
+                                <p class="font-normal text-xs">BTD</p>
+                            </div>
+                    <!-- text -->
+                    <div class="flex flex-col gap-4">
+                        <h1 class="font-bold text-sm">Donate for Flood at Noakhali, Bangladesh</h1>
+                        <p class="text-xs"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    </div>
+                    <!-- input -->
+                    <div>
+                        <input id="input-donate-1" type="text" autocomplete="off" placeholder="Write Donation Amount" class="input input-bordered w-full p-4 rounded-lg font-light text-xs" />
+                    </div>
+                    <!-- button -->
+                    <div>
+                        <button id="btn-donate-1" class="bg-btn-1 w-full px-8 py-4 rounded-lg font-bold">Donate Now</button>
+                    </div>
+                 </div>
+            </div>
+
+
+
+
+
+                    <!-- Modal -->
+            <section id="popup" class="fixed inset-0 flex items-center justify-center hidden">
+                <div class="mx-auto w-9/12 md:w-5/12 bg-lime-100 rounded-lg py-4 px-2 text-center">
+                    <div class="popupCard">
+                        <h1 class="font-bold text-lg">Congratulations.</h1>
+                        <div class="flex flex-row">
+                            <img class="ml-[40%] my-3" src="./assets/coin.png" alt="" />
+                            <p class="flex justify-center items-center text-center" id="modal-balance"></p>
+                        </div>
+                        <p>You've Donated For Human Kind</p>
+                        <p class="my-2 font-semibold">Successfully</p>
+                        <button id="close-confirmation" class="bg-green-50 py-2 px-5 rounded">Close</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- card 2 Feni-->
+            <div class=" lg:flex border-2 p-8 rounded-2xl gap-8  mx-3 space-y-6">
+                <!-- card img div -->
+                    <img src="assets/feni.png" alt="">
+                <!-- card text and input and button div -->
+                 <div class=" flex flex-col justify-between space-y-3">
+                    <!-- balance -->
+                            <div class=" flex text-center items-center space-x-1 md:space-x-2  bg-gray-bg px-4 py-2 rounded-lg w-32">
+                                <img width="full" src="assets/coin.png" alt="">
+                                <p id="feni-donated-balance" class="font-normal text-xs">3500</p>
+                                <p class="font-normal text-xs">BTD</p>
+                            </div>
+                    <!-- text -->
+                    <div class="flex flex-col gap-4">
+                        <h1 class="font-bold text-sm">Donate for Flood Relief in Feni,Bangladesh</h1>
+                        <p class="text-xs"> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                    </div>
+                    <!-- input -->
+                    <div>
+                        <input id="input-donate-2" type="text" autocomplete="off" placeholder="Write Donation Amount" class="input input-bordered w-full p-4 rounded-lg font-light text-xs" />
+                    </div>
+                    <!-- button -->
+                    <div>
+                        <button id="btn-donate-2" class="bg-btn-1 w-full px-8 py-4 rounded-lg font-bold">Donate Now</button>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- card 3 Quota -->
+            <div class=" lg:flex border-2 p-8 rounded-2xl gap-8  mx-3 space-y-6">
+                <!-- card img div -->
+                    <img src="assets/quota-protest.png" alt="">
+                <!-- card text and input and button div -->
+                 <div class=" flex flex-col justify-between space-y-3">
+                    <!-- balance -->
+                            <div class=" flex text-center items-center space-x-1 md:space-x-2  bg-gray-bg px-4 py-2 rounded-lg w-32">
+                                <img width="full" src="assets/coin.png" alt="">
+                                <p id="quota-donated-balance" class="font-normal text-xs">2000</p>
+                                <p class="font-normal text-xs">BTD</p>
+                            </div>
+                    <!-- text -->
+                    <div class="flex flex-col gap-4">
+                        <h1 class="font-bold text-sm">Aid for Injured in the Quota Movement</h1>
+                        <p class="text-xs"> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                    </div>
+                    <!-- input -->
+                    <div>
+                        <input id="input-donate-3" type="text" autocomplete="off" placeholder="Write Donation Amount" class="input input-bordered w-full p-4 rounded-lg font-light text-xs" />
+                    </div>
+                    <!-- button -->
+                    <div>
+                        <button id="btn-donate-3" class="bg-btn-1 w-full px-8 py-4 rounded-lg font-bold">Donate Now</button>
+                    </div>
+                 </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- main for history -->
+    <main id="main-history" class="md:container mx-auto mb-20 hidden">
+        <div id="history-container" class=" p-4 space-y-8"></div>
+    </main>
+
+
+
+
+
+    
+    <!-- <footer class=" h-24 bg-nav-bg"></footer> -->
+
+    <script src="utiliti.js"></script>
+        <script src="donate.js"></script>
+
+</body>
+</html>

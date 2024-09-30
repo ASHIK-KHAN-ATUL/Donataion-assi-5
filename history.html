@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- daisy ui cdn -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    
+        <style>
+            .font-lexend{
+                font-family: "Lexend", sans-serif;
+            }
+        </style>
+    
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                    'btn-primary':'#ABEF5F',
+                    'nav-bg': '#F9F7F3',
+                    'gray-bg':'#1111110D',
+                    'btn-1': '#B4F461',
+        
+                  }
+                }
+              }
+            }
+          </script>
+    
+</head>
+<body class="font-lexend">
+       <!-- header section start -->
+       <header class=" pb-1 sticky top-0">
+        <!-- nav section  start-->
+        <nav class="font-semibold ">
+            <div class="h-auto bg-nav-bg ">
+
+               <div class="py-6 px-2 md:px-12 flex justify-between text-sm gap-4">
+                <!--  num 1 -->
+                <div>
+                    <button class=" bg-btn-1 px-8 py-3 rounded-lg">Blog</button>
+                </div>
+                <!-- num 2 -->
+                <div class=" md:flex text-center items-center  space-x-1 md:space-x-3 "> 
+                    <div class="flex justify-center">
+                        <img src="assets/logo.png" alt="">
+                    </div>
+                    <p>Donate Bangladesh</p>
+                </div>
+                <!-- num 3 -->
+                <div class=" flex text-center items-center space-x-1 md:space-x-3 ">
+                    <img src="assets/coin.png" alt="">
+                    <p id="main-balance">51500</p>
+                    <p>BTD</p>
+                </div>
+               </div>
+            </div>
+        </nav>
+        <section>
+            <div class="pt-14 pb-10 backdrop-blur-md flex justify-center gap-4">
+                <button id="donatin-btn" class=" bg-btn-1 px-8 py-3 rounded-lg font-semibold">Donation</button>
+                <button class="border-2 px-8 py-3 rounded-lg font-medium">History</button>
+            </div>
+        </section>
+    </header>
+    
+</body>
+</html>
